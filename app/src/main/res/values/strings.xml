@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ShareTest</string>
+    <string name="sendTo">发送给同事</string>
+</resources>
