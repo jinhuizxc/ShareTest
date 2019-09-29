@@ -1,4 +1,4 @@
-package com.example.sharetest;
+package com.example.sharetest.share.shareto;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -18,6 +18,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.sharetest.R;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -181,7 +183,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK){
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, ShareToActivity.class));
         }
         return super.onKeyDown(keyCode, event);
     }
