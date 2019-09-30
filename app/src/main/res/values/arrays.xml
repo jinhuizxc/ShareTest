@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="short_video_app_share_ids">
+        <item>@id/share_to_weixin_circle</item>
+        <item>@id/share_to_weixin</item>
+        <item>@id/share_to_qq</item>
+        <item>@id/share_to_qzone</item>
+        <item>@id/share_to_sina</item>
+        <!--<item>@id/copy_link</item>-->
+    </array>
+
+    <string-array name="short_video_app_share_names">
+        <item>@string/weixin_circle</item>
+        <item>@string/weixin</item>
+        <item>@string/qq</item>
+        <item>@string/q_zone</item>
+        <item>@string/sina_weibo</item>
+        <!--<item>@string/copy_link</item>-->
+    </string-array>
+
+    <array name="short_video_app_share_icons">
+        <item>@drawable/icon_share_weixin_circle</item>
+        <item>@drawable/icon_share_weixin</item>
+        <item>@drawable/icon_share_qq</item>
+        <item>@drawable/icon_share_qzone</item>
+        <item>@drawable/icon_share_sina_weibo</item>
+        <!--<item>@drawable/icon_copy_link</item>-->
+    </array>
+
+    <array name="app_share_ids_2">
+        <item>@id/share_to_weixin_circle</item>
+        <item>@id/share_to_weixin</item>
+        <item>@id/share_to_qq</item>
+        <item>@id/share_to_qzone</item>
+        <item>@id/share_to_sina</item>
+    </array>
+
+    <string-array name="app_share_names_2">
+        <item>@string/weixin_circle</item>
+        <item>@string/weixin</item>
+        <item>@string/qq</item>
+        <item>@string/q_zone</item>
+        <item>@string/sina_weibo</item>
+    </string-array>
+
+    <array name="app_share_icons_2">
+        <item>@drawable/icon_share_weixin_circle</item>
+        <item>@drawable/icon_share_weixin</item>
+        <item>@drawable/icon_share_qq</item>
+        <item>@drawable/icon_share_qzone</item>
+        <item>@drawable/icon_share_sina_weibo</item>
+    </array>
+
+
+
+</resources>

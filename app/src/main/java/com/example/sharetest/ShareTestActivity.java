@@ -6,7 +6,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.blankj.utilcode.util.ActivityUtils;
-import com.example.sharetest.share.shareto.SecondActivity;
+import com.example.sharetest.activity.shareto.SecondActivity;
+import com.example.sharetest.activity.toshare.ToShareActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,6 +19,13 @@ import butterknife.OnClick;
  * <p>
  * Android - 分享内容 - 接收其他APP的内容
  * https://www.cnblogs.com/fengquanwang/archive/2013/06/21/3148689.html
+ *
+ * # UmengShare
+ * https://github.com/fg2q1q3q/UmengShare
+ * # Android中友盟第三方登录与分享自动集成的那些坑
+ * https://blog.csdn.net/apro_wang/article/details/79923526
+ *
+ *
  */
 public class ShareTestActivity extends AppCompatActivity {
 
@@ -42,6 +50,7 @@ public class ShareTestActivity extends AppCompatActivity {
                 ActivityUtils.startActivity(SecondActivity.class);
                 break;
             case R.id.btn_to_share:
+                ActivityUtils.startActivity(ToShareActivity.class);
                 break;
         }
     }

@@ -3,6 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.sharetest">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- 必须的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 推荐的权限 -->
+    <!-- 添加如下权限，以便使用更多的第三方SDK和更精准的统计数据 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -12,47 +29,159 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".share.toshare.ToShareActivity"></activity>
-
-          <activity android:name=".ShareTestActivity">
+        <activity android:name=".umeng.UmengActivity"></activity>
+        <activity android:name=".activity.toshare.ToShareActivity" />
+        <activity android:name=".ShareTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".share.shareto.SecondActivity"
+            android:name=".activity.shareto.SecondActivity"
             android:label="@string/sendTo">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
                 <action android:name="android.intent.action.SEND" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="image/*" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="text/plain" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SEND_MULTIPLE" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
-        <activity android:name=".share.shareto.ShareToActivity" />
+        <activity android:name=".activity.shareto.ShareToActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+
+        <activity android:name=".activity.sample.UmengSample1Activity"
+            android:theme="@style/AppThemeNoActionBar"/>
+
+        <activity android:name=".umeng.SharePlatformActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+
+        <activity android:name=".umeng.ShareDetailActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+
+        <activity android:name=".umeng.ShareBoardActivity"
+            android:theme="@style/AppThemeNoActionBar">
+        </activity>
+
+        <activity android:name=".umeng.AuthActivity"
+            android:theme="@style/AppThemeNoActionBar">
+        </activity>
+
+        <activity android:name=".umeng.InfoActivity"
+            android:theme="@style/AppThemeNoActionBar">
+        </activity>
+
+        <activity android:name=".umeng.InfoDetailActivity"
+            android:theme="@style/AppThemeNoActionBar">
+        </activity>
+
+        <activity android:name=".umeng.SettingActivity"
+            android:theme="@style/myTransparent">
+        </activity>
+
+
+        <activity android:name=".activity.share.UmengSample2Activity"/>
+
+
+        <!--umeng配置-->
+        <!-- umeng start -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1107802681" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- sina -->
+        <activity
+            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
+
+        </activity>
+        <activity
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+
+        <!-- weixin -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--设置别名-->
+        <activity-alias
+            android:name="${applicationId}.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:targetActivity=".wxapi.WXEntryActivity" />
+
+        <!-- umeng end -->
+
+        <!--<receiver android:name=".clock.MyAlarmReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>-->
+
+        <!--<service android:name=".download.LocalDownloadService" />-->
+
+        <meta-data
+            android:name="com.example.mingyu.glide.MXTAppGlideModule"
+            android:value="GlideModule" />
+
+        <!-- umeng start-->
+        <!--        <meta-data
+                    android:name="UMENG_APPKEY"
+                    android:value="5af90daab27b0a42fb000125" />-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5b0d0b77b27b0a748c00021e" />
+
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="mingyu" />
+        <!-- umeng end-->
+
+
+
+
+
     </application>
 
 </manifest>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="item_height">45dp</dimen>
+    <dimen name="titlebar">54dp</dimen>
+    <dimen name="daza_space_15">15dp</dimen>
+    <dimen name="daza_space_16">16dp</dimen>
+    <dimen name="daza_font_12">12sp</dimen>
+    <dimen name="daza_space_12">12dp</dimen>
+    <dimen name="daza_space_7">7dp</dimen>
+    <dimen name="daza_font_10">10sp</dimen>
+    <dimen name="daza_space_22">22dp</dimen>
+    <dimen name="daza_space_14">14dp</dimen>
+    <dimen name="daza_font_18">18sp</dimen>
+    <dimen name="daza_space_10">10dp</dimen>
+    <dimen name="header_actionbar_height">44dp</dimen>
+
+</resources>

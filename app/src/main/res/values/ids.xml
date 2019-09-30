@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- share -->
+    <item name="share_to_weixin" type="id"/>
+    <item name="share_to_weixin_circle" type="id"/>
+    <item name="share_to_qq" type="id"/>
+    <item name="share_to_qzone" type="id"/>
+    <item name="share_to_sina" type="id"/>
+
+</resources>
