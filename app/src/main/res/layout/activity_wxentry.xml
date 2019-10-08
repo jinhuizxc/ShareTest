@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_share_entry"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.shareto.ShareToActivity"
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/bt_share_to"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="外部应用分享到App" />
+        android:onClick="shareWXSceneSession"
+        android:text="分享给微信好友" />
 
     <Button
-        android:id="@+id/btn_to_share"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="App分享到外部应用"/>
+        android:onClick="shareWXSceneTimeline"
+        android:text="分享到朋友圈" />
 
 </LinearLayout>

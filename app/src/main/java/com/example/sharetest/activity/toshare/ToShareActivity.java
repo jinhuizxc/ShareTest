@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.example.sharetest.NativeShareActivity;
 import com.example.sharetest.R;
 import com.example.sharetest.activity.sample.UmengSample1Activity;
 import com.example.sharetest.umeng.UmengActivity;
@@ -42,7 +43,8 @@ public class ToShareActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_share1:
-                ToastUtils.showShort("todo");
+                // 原生分享
+                ActivityUtils.startActivity(NativeShareActivity.class);
                 // 分享文本、图片、链接等;
                 break;
             case R.id.btn_share2:
