@@ -1,1 +1,1 @@
-include ':app', ':UMLibrary', ':umeng'
+include ':app', ':umeng'

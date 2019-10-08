@@ -14,6 +14,12 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <!-- 在SDCard中创建与删除文件的权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+
+
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -32,7 +38,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 外部应用分享到App -->
+        </activity>
+
+        <!-- 外部应用分享到App -->
         <activity
             android:name=".activity.shareto.SecondActivity"
             android:label="@string/sendTo">
@@ -72,64 +80,28 @@
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".umeng.ShareBoardActivity"
-            android:theme="@style/AppThemeNoActionBar"></activity>
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
             android:name=".umeng.AuthActivity"
-            android:theme="@style/AppThemeNoActionBar"></activity>
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
             android:name=".umeng.InfoActivity"
-            android:theme="@style/AppThemeNoActionBar"></activity>
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
             android:name=".umeng.InfoDetailActivity"
-            android:theme="@style/AppThemeNoActionBar"></activity>
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
             android:name=".umeng.SettingActivity"
-            android:theme="@style/myTransparent"></activity>
+            android:theme="@style/myTransparent"/>
         <activity
             android:name=".umeng.UmengActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity android:name=".activity.toshare.ToShareActivity" />
-        <activity android:name=".activity.share.UmengSample2Activity" /> <!-- umeng配置 -->
-        <!-- umeng start -->
-        <activity
-            android:name="com.tencent.tauth.AuthActivity"
-            android:launchMode="singleTask"
-            android:noHistory="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+        <activity android:name=".activity.share.UmengSample2Activity" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="tencent1107802681" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.tencent.connect.common.AssistActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- sina -->
-        <activity
-            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize"></activity>
-        <activity
-            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
-            android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
-            <intent-filter>
-                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <!-- weixin android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
+        <!-- 微信分享
+       android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -142,32 +114,58 @@
             android:name="${applicationId}.wxapi.WXEntryActivity"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent"
-            android:targetActivity=".wxapi.WXEntryActivity"
-            />
+            android:targetActivity=".wxapi.WXEntryActivity"/>
 
-        <!-- umeng end -->
-        <!--
-<receiver android:name=".clock.MyAlarmReceiver">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <!--QQ分享-->
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1107802681" />
+                <!--100424468-->
             </intent-filter>
-        </receiver>
-        -->
-        <!-- <service android:name=".download.LocalDownloadService" /> -->
-        <meta-data
-            android:name="com.example.mingyu.glide.MXTAppGlideModule"
-            android:value="GlideModule" /> <!-- umeng start -->
-        <!--
-        <meta-data
-                    android:name="UMENG_APPKEY"
-                    android:value="5af90daab27b0a42fb000125" />
-        -->
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="5b0d0b77b27b0a748c00021e" />
-        <meta-data
-            android:name="UMENG_CHANNEL"
-            android:value="mingyu" />
+        </activity>
+
+        <!-- 新浪分享 -->
+        <activity
+            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+
+
+
     </application>
 
 </manifest>
