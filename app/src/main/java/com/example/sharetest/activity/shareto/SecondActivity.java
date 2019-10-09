@@ -63,7 +63,7 @@ public class SecondActivity extends AppCompatActivity {
         spannableString.setSpan(urlSpan, 5, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
 
         // ForegroundColorSpan，为文本设置前景色，效果和TextView的setTextColor()类似
-        ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.parseColor("#0099EE"));
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(getResources().getColor(R.color.color_blue));
         spannableString.setSpan(colorSpan, 5, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
 
         tv_text.setMovementMethod(LinkMovementMethod.getInstance());
