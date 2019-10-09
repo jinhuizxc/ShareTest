@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
+import android.text.style.ForegroundColorSpan;
 import android.text.style.URLSpan;
 import android.util.Log;
 import android.util.Patterns;
@@ -31,8 +32,9 @@ public class SecondActivity extends AppCompatActivity {
     private static TextView tv_text;
 
     private SecondActivity context;
-    AlertDialog alertDialog;
 
+//    private String content = "习近平给福建省寿宁县下党乡乡亲们的回信";
+    // 带url的text;
     private String content = "习近平给福建省寿宁县下党乡乡亲们的回信http://t.zijieimg.com/DM2aoF/";
 
     @Override
@@ -59,8 +61,13 @@ public class SecondActivity extends AppCompatActivity {
         SpannableString spannableString = new SpannableString(tv_text.getText().toString());
         URLSpan urlSpan = new URLSpan("http://www.jianshu.com/users/dbae9ac95c78");
         spannableString.setSpan(urlSpan, 5, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+
+        // ForegroundColorSpan，为文本设置前景色，效果和TextView的setTextColor()类似
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.parseColor("#0099EE"));
+        spannableString.setSpan(colorSpan, 5, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+
         tv_text.setMovementMethod(LinkMovementMethod.getInstance());
-        tv_text.setHighlightColor(Color.parseColor("#36969696"));
+        tv_text.setHighlightColor(Color.parseColor("#0099EE"));
         tv_text.setText(spannableString);
 
         // 获取字符串中的url
@@ -136,25 +143,34 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
-                tv_content.setText(sharedText);
-
                 // 设置样式
-                SpannableString spannableString = new SpannableString(tv_content.getText().toString());
-                Matcher matcher = Patterns.WEB_URL.matcher(tv_content.getText().toString());
+                SpannableString spannableString = new SpannableString(sharedText);
+                Matcher matcher = Patterns.WEB_URL.matcher(sharedText);
                 if (matcher.find()){
                     System.out.println(matcher.group());
                     Log.e(TAG, "url: " + matcher.group());
                     // E/ShareTestContent: url: http://v.douyin.com/eUWYth
-                }
-                Log.e(TAG, "url地址: " + matcher.group());  // url地址: http://t.zijieimg.com/DM2aoF/
-                URLSpan urlSpan = new URLSpan(matcher.group());
-                // 下标位置
-                spannableString.setSpan(urlSpan, spannableString.length() - matcher.group().length(),
-                        spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-                tv_content.setMovementMethod(LinkMovementMethod.getInstance());
-                tv_content.setHighlightColor(Color.parseColor("#36969696"));
-                tv_content.setText(spannableString);
+                    Log.e(TAG, "url地址: " + matcher.group());  // url地址: http://t.zijieimg.com/DM2aoF/
+                    URLSpan urlSpan = new URLSpan(matcher.group());
+                    // 下标位置
+                    spannableString.setSpan(urlSpan, spannableString.length() - matcher.group().length(),
+                            spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
 
+                    // ForegroundColorSpan，为文本设置前景色，效果和TextView的setTextColor()类似
+                    ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.parseColor("#0099EE"));
+                    spannableString.setSpan(colorSpan, spannableString.length() - matcher.group().length(),
+                            spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+
+                    tv_content.setMovementMethod(LinkMovementMethod.getInstance());
+//                    tv_content.setHighlightColor(getResources().getColor(R.color.color_blue));
+                    tv_content.setHighlightColor(Color.parseColor("#0099EE"));
+
+
+
+                    tv_content.setText(spannableString);
+                }else {
+                    tv_content.setText(sharedText);
+                }
 
             }
         });

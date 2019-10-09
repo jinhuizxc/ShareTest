@@ -7,7 +7,7 @@
         android:id="@+id/bt_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="test" />
+        android:text="发送并测试" />
 
     <TextView
         android:id="@+id/tv_content"
