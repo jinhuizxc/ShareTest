@@ -22,7 +22,7 @@ https://developer.umeng.com/docs/66632/detail/66791?um_channel=sdk
 
 ## QQ分享遇到的问题;
 ```
-- [Android9.0_P:ClassNotFoundException: Didn't find class "org.apache.http.conn.scheme.SchemeRegistry"]https://blog.csdn.net/chinaboyliusir/article/details/82755193
+- [Android9.0_P:ClassNotFoundException: Didn't find class "org.apache.http.conn.scheme.SchemeRegistry"](https://blog.csdn.net/chinaboyliusir/article/details/82755193)
 ```
 
 
