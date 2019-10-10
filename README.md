@@ -14,15 +14,9 @@
 - [Android 微信分享与QQ分享功能(原生实现)](https://blog.csdn.net/YiRanAiNi_/article/details/79454719)
 - [腾讯开放平台SDK下载](https://wiki.open.qq.com/wiki/mobile/SDK%E4%B8%8B%E8%BD%BD)
 
-## 问题1
-```
-https://developer.umeng.com/docs/66632/detail/66810?um_channel=sdk
-https://developer.umeng.com/docs/66632/detail/66791?um_channel=sdk
-```
-
-## QQ分享遇到的问题;
-```
+## 遇到的问题
+- [【SX10006】微信授权或分享之后没有回调](https://developer.umeng.com/docs/66632/detail/66791?um_channel=sdk)
 - [Android9.0_P:ClassNotFoundException: Didn't find class "org.apache.http.conn.scheme.SchemeRegistry"](https://blog.csdn.net/chinaboyliusir/article/details/82755193)
-```
+
 
 
